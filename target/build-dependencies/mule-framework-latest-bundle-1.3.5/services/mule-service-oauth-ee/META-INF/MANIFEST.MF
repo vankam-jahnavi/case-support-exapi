@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Created-By: Maven JAR Plugin 3.5.0
+Java-Version: 17
+Build-Jdk-Spec: 17
+Specification-Title: OAuth Service EE Implementation
+Specification-Version: 1.8
+Specification-Vendor: MuleSoft, Inc.
+Implementation-Title: OAuth Service EE Implementation
+Implementation-Version: 1.8.4
+Implementation-Vendor: MuleSoft, Inc.
+Automatic-Module-Name: com.mulesoft.mule.service.oauth.ee
+Build-Date: 
+Build-Revision: 4f2e6dc5
+Description: Mule Runtime and Integration Platform
+Dev-List-Email: mule-esb@mulesoft.com
+Git-branch: 1.8.4
+Git-commit-id: 4f2e6dc568d8c573c561e7e18d0360bd399ff602
+Git-commit-id-describe: 1.8.4-rc3-2-g4f2e6dc
+Git-commit-time: 2026-05-04T18:07:48+0000
+Git-remote-origin-url: https://github.com/mulesoft-emu/mule-oauth-ee-ser
+ vice.git
+Git-tags: 
+License: CPAL v1.0 http://www.mulesoft.com/CPAL/
+More-Info: For more information go to https://developer.mulesoft.com/
+Product-Url: https://developer.mulesoft.com/
+Recommended-Jdks: [17,18),[21,22)
+Support: Get commercial support: http://www.mulesoft.com/support
+Supported-Jdks: [17,22)
+Vendor-Url: http://www.mulesoft.com
+

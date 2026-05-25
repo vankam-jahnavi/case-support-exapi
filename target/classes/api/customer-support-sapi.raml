@@ -1,0 +1,10 @@
+#%RAML 1.0
+title: customer-support-sapi
+description: Allow users to create and retrieve Support Cases stored in Salesforce 
+uses:
+  lib: /Library/library.raml
+/contacts:
+  is: lib.err
+  type: lib.create
+  /{Id}:
+    type: lib.fetch

@@ -1,0 +1,14 @@
+#%RAML 1.0 ResourceType
+description: Fetch contacts by Account_id in Salesforce 
+uriParameters:
+  Id:
+    type: string
+    required: true
+    example: "A01"
+get:
+  responses:
+    200:
+      body:
+        application/json:
+          type: !include ../Data Types/case-fetch.raml
+          example: !include ../Examples/fetch.json

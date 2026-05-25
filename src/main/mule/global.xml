@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway" xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd
+http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd">
+	<http:request-config name="HTTP_Request_config" doc:name="HTTP Request config" doc:id="275e2b55-a436-47e2-be19-b2eec0f24f53" >
+		<http:request-connection protocol="HTTPS" host="case-support-sapi-f8m85h.5sc6y6-1.usa-e2.cloudhub.io">
+		</http:request-connection>
+	</http:request-config>
+	<api-gateway:autodiscovery apiId="20924781" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="76a75e51-43fb-4c63-bc82-1bc4933b89bb" flowRef="customer-support-sapi-main"/>
+</mule>

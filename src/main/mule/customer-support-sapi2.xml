@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<sub-flow name="fetch-cases" doc:id="7ed2cf9a-dc42-4663-a7c9-5c46c88d5360" >
+		<logger level="INFO" doc:name="Logger" doc:id="297cd18b-27bb-44c5-b783-5b1a507e5b16" message="Fetch process started"/>
+		<http:request doc:name="Request" doc:id="dd3a0fc5-0b70-42e0-8055-baaaf830d9eb" config-ref="HTTP_Request_config" path="/api/contacts/{Id}">
+			<http:uri-params><![CDATA[#[output application/json
+---
+{
+	"Id" : vars.Id
+}]]]></http:uri-params>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="c5bc6bce-e8d9-44bf-971a-1e13a67bae42">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="445f7c2b-b1cd-4242-acd1-6c9cd3b62925" message="Successfully fetched case details"/>
+	</sub-flow>
+	<sub-flow name="create-cases" doc:id="96ccda98-29bf-4a1f-b0db-7cf2a60027ee" >
+		<logger level="INFO" doc:name="Logger" doc:id="43c0398e-34ef-4057-b368-75cfeb19cca4" message="Creation of cases started"/>
+		<ee:transform doc:name="Transform Message" doc:id="1066e0eb-c182-437e-af31-2274e86404bb">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<http:request doc:name="Request" doc:id="0d704ea5-399d-4c4a-a954-ec8c2d186730" config-ref="HTTP_Request_config" method="POST" path="/api/contacts"/>
+		<ee:transform doc:name="Transform Message" doc:id="b088788e-ef01-4bc9-815f-fc0750412530">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="0517d202-4b46-4f62-b465-b07f3b85139e" message="Successfully created case details"/>
+	</sub-flow>
+</mule>
