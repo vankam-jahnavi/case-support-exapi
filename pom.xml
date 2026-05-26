@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>d52bf520-4177-4108-9a6f-eb464d3bd9e2</groupId>
-	<artifactId>case-support-exapi</artifactId>
+	<artifactId>case-support-exapii</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
