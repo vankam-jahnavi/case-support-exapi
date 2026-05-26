@@ -6,7 +6,7 @@
 
 	<groupId>d52bf520-4177-4108-9a6f-eb464d3bd9e2</groupId>
 	<artifactId>case-support-exapi</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>mule-application</packaging>
 
 	<name>case-support-exapi</name>
